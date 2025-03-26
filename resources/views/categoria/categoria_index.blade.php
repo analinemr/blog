@@ -10,14 +10,16 @@
                 <div class="card-body">
 
                 <table>
+
                     <tr>
                         <th>Id</th>
                         <th>Nome</th>
                     </tr>
-                    @foreach ($categorias as $value)
+
+                    @foreach ($categorias as $categoria)
                     <tr>
-                        <td>0001</td>
-                        <td>Ana Maria Teste</td>
+                        <td>{{ $categoria->id }}</td>
+                        <td>{{ $categoria->nome }}</td>
                     </tr>
                     @endforeach
 
