@@ -37,7 +37,8 @@ class CategoriaController extends Controller
      */
     public function show(string $id)
     {
-        //
+    $categoria = Categoria::find($id);
+    return view('categoria.categoria_show', compact('categoria'));
     }
 
     /**

@@ -5,21 +5,26 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><Categorias/div>
+                <div class="card-header">Categoria</div>
 
                 <div class="card-body">
 
-                <table>
+                    <a class="btn btn-success" href="{{url('categoria/create')}}">CRIAR</a>
+                    <BR>
+
+                <table class='table'>
 
                     <tr>
                         <th>Id</th>
                         <th>Nome</th>
+                        <th>Ações</th>
                     </tr>
 
-                    @foreach ($categorias as $categoria)
+                    @foreach ($categorias as $value)
                     <tr>
-                        <td>{{ $categoria->id }}</td>
-                        <td>{{ $categoria->nome }}</td>
+                        <td>{{ $value->id }}</td>
+                        <td>{{ $value->nome }}</td>
+                        <td><a class="btn btn-info" href="{{ url('categoria/'.$value->id) }}">VISUALIZAR</a></td>
                     </tr>
                     @endforeach
 
