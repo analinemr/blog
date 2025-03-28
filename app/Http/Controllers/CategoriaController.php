@@ -21,7 +21,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view ('categoria.categoria_create');
     }
 
     /**
@@ -29,7 +29,9 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        //$categoria = new Categoria();
+        //$categoria -> nome = $request->nome;
     }
 
     /**
