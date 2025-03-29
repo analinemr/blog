@@ -12,6 +12,12 @@
                     <a class="btn btn-success" href="{{url('categoria/create')}}">CRIAR</a>
                     <BR>
 
+                    @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+
                 <table class='table'>
 
                     <tr>
@@ -24,7 +30,10 @@
                     <tr>
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->nome }}</td>
-                        <td><a class="btn btn-info" href="{{ url('categoria/'.$value->id) }}">VISUALIZAR</a></td>
+                        <td>
+                            <a class="btn btn-info" href="{{ url('categoria/'.$value->id) }}">Visualizar</a>
+                            <a class="btn btn-warning" href="{{ url('categoria/'.$value->id.'/edit') }}">Editar</a>
+                        </td>
                     </tr>
                     @endforeach
 

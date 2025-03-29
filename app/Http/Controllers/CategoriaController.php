@@ -29,9 +29,29 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-        //$categoria = new Categoria();
-        //$categoria -> nome = $request->nome;
+
+    // Mensagens personalizadas
+    $messages = [
+        'nome.required' => 'O nome da categoria é um campo obrigatório!',
+        'nome.min' => 'O nome deve ter pelo menos 5 caracteres.',
+        'nome.max' => 'O nome não pode ter mais de 10 caracteres.',
+        'nome.unique' => 'Já existe uma categoria com esse nome.',
+];
+
+    // Regras de validação com as mensagens personalizadas
+    $validated = $request->validate([
+        'nome' => 'required|min:5|max:10|unique:categorias,nome',
+    ], $messages);
+
+    // Criar e salvar a categoria
+    $categoria = new Categoria();
+    $categoria->nome = $request->nome;
+    $categoria->save();
+
+    // Redirecionar ou retornar uma resposta, se necessário
+    return redirect()->route('categoria.index')->with('success', 'Categoria cadastrada com sucesso!');
+
+    
     }
 
     /**
@@ -39,8 +59,8 @@ class CategoriaController extends Controller
      */
     public function show(string $id)
     {
-    $categoria = Categoria::find($id);
-    return view('categoria.categoria_show', compact('categoria'));
+        $categoria = Categoria::find($id);
+        return view('categoria.categoria_show', compact('categoria'));
     }
 
     /**
@@ -48,7 +68,8 @@ class CategoriaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categoria=Categoria::find($id); 
+        return view('categoria.categoria_edit', compact('categoria'));
     }
 
     /**
