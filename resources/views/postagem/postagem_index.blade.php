@@ -34,14 +34,15 @@
                 <table class='table'>
 
                     <tr>
-                        <th>Id</th>
-                        <th>Nome</th>
-                        <th>Ações</th>
+                        <th>Categoria</th>
+                        <th>Título</th>
+                        <th>Descrição</th>
                     </tr>
 
                     @foreach ($postagens as $value)
                     <tr>
                         <td>{{ $value->id }}</td>
+                        <td>{{ $value->categoria_id}}</td>
                         <td>{{ $value->titulo}}</td>
                         <td>
                             <a class="btn btn-info" href="{{ url('postagem/'.$value->id) }}">Visualizar</a>

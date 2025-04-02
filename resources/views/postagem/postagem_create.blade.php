@@ -25,7 +25,7 @@
                         @csrf  <!-- Protege o formulário contra CSRF -->
 
                         <div class="form-group">
-                            <label for="tituo">Título da Postagem: </label>
+                            <label for="titulo">Título da Postagem: </label>
                             <input type="text" id="titulo" name="titulo" class="form-control">
                         </div>
 

@@ -5,18 +5,19 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Postagens - Show</div> <!-- Fechamento correto da tag div -->
+                <div class="card-header">Postagem - SHOW</div>
 
                 <div class="card-body">
-                    <p><strong>Id: </strong>{{ $postagem->id }}</p> <!-- Exibe o id da postagem -->
-                    <p><strong>Título: </strong>{{ $postagem->titulo }}</p> <!-- Exibe o título da postagem -->
-                    <p><strong>Descrição: </strong>{{ $postagem->descricao }}</p> <!-- Exibe o texto da postagem -->
-                    <p><strong>Criação: </strong>{{ $postagem->created_at }}</p> <!-- Exibe o data de criação da postagem -->
-                    <p><strong>Atualização: </strong>{{ $postagem->updated_at }}</p> <!-- Exibe o nome da postagem -->
+
+                    <p><strong>Id: </strong>{{ $postagem->id }}</p>
+                    <p><strong>Categoria: </strong>{{ $postagem->categoria->nome }}</p>
+                    <p><strong>Título: </strong>{{ $postagem->titulo }}</p>
+                    <p><strong>Criação: </strong>{{ $postagem->created_at }}</p>
+                    <p><strong>Atualização: </strong>{{ $postagem->updated_at }}</p>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
-

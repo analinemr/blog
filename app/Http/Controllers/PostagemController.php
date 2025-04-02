@@ -14,7 +14,7 @@ class PostagemController extends Controller
     public function index()
     {
         $postagens = Postagem::orderBy('titulo', 'ASC')->get();
-        return view ('postagem.categoria_index', compact('postagens'));
+        return view ('postagem.postagem_index', compact('postagens'));
     }
 
     /**
@@ -22,36 +22,33 @@ class PostagemController extends Controller
      */
     public function create()
     {
-        return view ('postagem.categoria_create');
+        return view ('postagem.postagem_create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
- {
+    {
 
-    // Mensagens personalizadas
-    $messages = [
-        'titulo.required' => 'O título da postagem é um campo obrigatório!',
-        'titulo.max' => 'O título não pode ter mais de 20 caracteres.',
-        'titulo.unique' => 'Já existe uma postagem com esse título.',
-];
+        $messages = [
+            'titulo.required' => 'O nome é um campo obrigatório!',
+        ];
 
-    // Regras de validação com as mensagens personalizadas
-    $validated = $request->validate([
-        'titulo' => 'required|max:20|unique:postagens,titulo',
-    ], $messages);
+        $validated = $request->validate([
+            'categoria_id' => 'required',
+            'titulo' => 'required|min:5',
+            'descricao' => 'required',
+        ], $messages);
 
-    // Criar e salvar a postagem
-    $postagem = new Postagem();
-    $postagem->titulo = $request->titulo;
-    $postagem->save();
+        //dd($request->all());
+        $postagem = new Postagem();
+        $postagem->categoria_id = $request->categoria_id;
+        $postagem->titulo = $request->titulo;
+        $postagem->descricao = $request->descricao;
+        $postagem->save();
 
-    // Redirecionar ou retornar uma resposta, se necessário
-    return redirect()->route('postagem.index')->with('success', 'Postagem cadastrada com sucesso!');
-
-
+        return redirect()->route('postagem.index')->with('message', 'Postagem cadastrada com sucesso!');
     }
 
     /**
@@ -60,7 +57,7 @@ class PostagemController extends Controller
     public function show(string $id)
     {
         $postagem = Postagem::find($id);
-        return view('postagem.categoria_show', compact('postagem'));
+        return view('postagem.postagem_show', compact('postagem'));
     }
 
     /**
@@ -69,7 +66,7 @@ class PostagemController extends Controller
     public function edit(string $id)
     {
         $postagem=Postagem::find($id);
-        return view('postagem.categoria_edit', compact('postagem'));
+        return view('postagem.postagem_edit', compact('postagem'));
     }
 
     /**
