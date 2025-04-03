@@ -57,6 +57,7 @@ class PostagemController extends Controller
     public function show(string $id)
     {
         $postagem = Postagem::find($id);
+        //dd($postagem);
         return view('postagem.postagem_show', compact('postagem'));
     }
 
