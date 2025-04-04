@@ -20,18 +20,19 @@
                     </div>
                     @endif
 
-                <!-- Create Post Form -->
+                <!-- Formulário -->
                     <form action="{{ url('postagem') }}" method="post">
-                        @csrf  <!-- Protege o formulário contra CSRF -->
-                        
-                        <div class="form-group">                       
+
+                        @csrf  <!-- Protege o formulário contra CSRF -  -->
+
+                        <div class="form-group">
                         <select name="categoria_id" class="form-control">
-                            @foreach ($categorias as $value)              
+                            @foreach ($categorias as $value)
                                 <option value="{{$value->id}}">{{$value->nome}}</option>
-                            @endforeach 
+                            @endforeach
                         </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="titulo">Título da Postagem: </label>
                             <input type="text" id="titulo" name="titulo" class="form-control">
@@ -42,9 +43,12 @@
                             <textarea id="descricao" name="descricao" rows="4" cols="50" class="form-control">
                                 TESTE - Descrição da postagem
                             </textarea>
+
                         </div>
 
+                        <div>
                         <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
 
                     </form>
 

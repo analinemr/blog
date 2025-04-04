@@ -69,32 +69,33 @@ class PostagemController extends Controller
     {
         $postagem=Postagem::find($id);
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
-        return view ('postagem.postagem_edit', compact('categorias'));
+        return view('postagem.postagem_edit', compact('postagem', 'categorias'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    //Alterar
     public function update(Request $request, string $id)
     {
         $messages = [
-            'titulo.required' => 'O título é um campo obrigatório!',
+            'titulo.required' => 'O nome é um campo obrigatório!',
         ];
 
         $validated = $request->validate([
-            'titulo' => 'required|max:20',
+            'categoria_id' => 'required',
+            'titulo' => 'required|min:5',
+            'descricao' => 'required',
         ], $messages);
 
+        //dd($request->all());
         $postagem = Postagem::find($id);
-        $postagem->postagem = $request->postagem;
+        $postagem->categoria_id = $request->categoria_id;
+        $postagem->titulo = $request->titulo;
+        $postagem->descricao = $request->descricao;
         $postagem->save();
 
         return redirect()->route('postagem.index')->with('message', 'Postagem atualizada com sucesso!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    //Deletar
     public function destroy(string $id)
     {
         $postagem = Postagem::find($id);

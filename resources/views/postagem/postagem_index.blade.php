@@ -16,13 +16,14 @@
 
                 <div class="card-body">
 
-                    <a class="btn btn-success" href="{{url('postagem/create')}}">CRIAR</a>
-                    <BR>
+                    <div>
+                        <a class="btn btn-success" href="{{url('postagem/create')}}">CRIAR</a>
+                    </div>
 
-                        @if (session('message'))
-                        <div class="alert alert-success">
-                            {{ session('message') }}
-                        </div>
+                    @if (session('message'))
+                       <div class="alert alert-success">
+                           {{ session('message') }}
+                       </div>
                     @endif
 
                     @if (session('error'))
@@ -42,7 +43,8 @@
                     @foreach ($postagens as $value)
                     <tr>
                         <td>{{ $value->id }}</td>
-                        <td>{{ $value->categoria_id}}</td>
+                        <!-- relacionamento com o ID da categoria para retornar nome -->
+                        <td>{{ $value->categoria->nome}}</td>
                         <td>{{ $value->titulo}}</td>
                         <td>
                             <a class="btn btn-info" href="{{ url('postagem/'.$value->id) }}">Visualizar</a>
