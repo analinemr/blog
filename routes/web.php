@@ -31,7 +31,7 @@ Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])->name(
 Route::get('/postagem', [PostagemController::class, 'index'])->name('postagem.index');
 // Create (Criar)
 Route::get('/postagem/create', [PostagemController::class, 'create'])->name('postagem.create');
-//Inserção da cetegoria
+//Inserção de postagem
 Route::post('/postagem', [PostagemController::class, 'store'])->name('postagem.store');
 // Visualizar
 Route::get('/postagem/{id}', [PostagemController::class, 'show'])->name('postagem.show');

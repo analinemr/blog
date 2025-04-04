@@ -22,7 +22,8 @@ class PostagemController extends Controller
      */
     public function create()
     {
-        return view ('postagem.postagem_create');
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        return view ('postagem.postagem_create', compact('categorias'));
     }
 
     /**
@@ -67,7 +68,8 @@ class PostagemController extends Controller
     public function edit(string $id)
     {
         $postagem=Postagem::find($id);
-        return view('postagem.postagem_edit', compact('postagem'));
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        return view ('postagem.postagem_edit', compact('categorias'));
     }
 
     /**
