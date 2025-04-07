@@ -7,9 +7,8 @@ use Illuminate\Support\Facades\DB;
 
 class CategoriaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+
+    //Criação de tabela para teste (sem retorno de dados)
     public function run(): void
     {
         DB::table('Categorias')->insert([

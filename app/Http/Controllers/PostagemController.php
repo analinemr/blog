@@ -3,45 +3,43 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//Inclui o model de categoria para 
 use App\Models\Categoria;
+//Inclui o model de postagem
 use App\Models\Postagem;
 
 class PostagemController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    //Página principal de postagem
     public function index()
     {
         $postagens = Postagem::orderBy('titulo', 'ASC')->get();
         return view ('postagem.postagem_index', compact('postagens'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    //Criar nova postagem
     public function create()
     {
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         return view ('postagem.postagem_create', compact('categorias'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    //Puxa dados para os SHOW 
     public function store(Request $request)
     {
-
+    // Mensagens personalizadas
         $messages = [
             'titulo.required' => 'O nome é um campo obrigatório!',
         ];
 
+    // Regras de validação com as mensagens personalizadas
         $validated = $request->validate([
             'categoria_id' => 'required',
             'titulo' => 'required|min:5',
             'descricao' => 'required',
         ], $messages);
 
+        //Criar e Salvar Postagem
         //dd($request->all());
         $postagem = new Postagem();
         $postagem->categoria_id = $request->categoria_id;
@@ -49,12 +47,11 @@ class PostagemController extends Controller
         $postagem->descricao = $request->descricao;
         $postagem->save();
 
+     // Redirecionar ou retornar uma resposta, se necessário
         return redirect()->route('postagem.index')->with('message', 'Postagem cadastrada com sucesso!');
     }
 
-    /**
-     * Display the specified resource.
-     */
+    //viasualizar postagens 
     public function show(string $id)
     {
         $postagem = Postagem::find($id);
@@ -62,9 +59,7 @@ class PostagemController extends Controller
         return view('postagem.postagem_show', compact('postagem'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    //Edita postagens 
     public function edit(string $id)
     {
         $postagem=Postagem::find($id);
@@ -72,7 +67,7 @@ class PostagemController extends Controller
         return view('postagem.postagem_edit', compact('postagem', 'categorias'));
     }
 
-    //Alterar
+    //Altera de postagens na edição
     public function update(Request $request, string $id)
     {
         $messages = [
@@ -95,7 +90,7 @@ class PostagemController extends Controller
         return redirect()->route('postagem.index')->with('message', 'Postagem atualizada com sucesso!');
     }
 
-    //Deletar
+    //Deletar postagens
     public function destroy(string $id)
     {
         $postagem = Postagem::find($id);

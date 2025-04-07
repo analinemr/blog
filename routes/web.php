@@ -12,7 +12,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Categoria
+// CATEGORIA
 Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
 // Create (Criar)
 Route::get('/categoria/create', [CategoriaController::class, 'create'])->name('categoria.create');
@@ -27,7 +27,7 @@ Route::put('/categoria/{id}', [CategoriaController::class, 'update'])->name('cat
 // Delete
 Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])->name('categoria.destroy');
 
-// Postagem
+// POSTAGEM
 Route::get('/postagem', [PostagemController::class, 'index'])->name('postagem.index');
 // Create (Criar)
 Route::get('/postagem/create', [PostagemController::class, 'create'])->name('postagem.create');
