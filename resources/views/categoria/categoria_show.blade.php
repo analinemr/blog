@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">Categorias - Show</div> <!-- Fechamento correto da tag div -->
 
+                <!-- Visualização Categoria -->
                 <div class="card-body">
                     <p><strong>Id: </strong>{{ $categoria->id }}</p> <!-- Exibe o id da categoria -->
                     <p><strong>Nome: </strong>{{ $categoria->nome }}</p> <!-- Exibe o nome da categoria -->

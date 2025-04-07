@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Postagem</div>
 
-
+                <!-- Página principal de Postagem -->
                 <script>
                     function ConfirmDelete(){
                         return confirm('Tem certeza que deseja excluir este registro?');

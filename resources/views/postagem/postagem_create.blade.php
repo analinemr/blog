@@ -5,11 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Nova Postagem</div> <!-- Fechamento correto da tag div -->
+                <div class="card-header">Nova Postagem</div>
 
                 <div class="card-body">
 
-                <!-- /resources/views/post/create.blade.php -->
                      @if ($errors->any())
                      <div class="alert alert-danger">
                         <ul>
@@ -20,7 +19,7 @@
                     </div>
                     @endif
 
-                <!-- Formulário -->
+                <!-- Formulário de  criação de postagem-->
                     <form action="{{ url('postagem') }}" method="post">
 
                         @csrf  <!-- Protege o formulário contra CSRF -  -->

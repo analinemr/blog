@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
+    //Dados para teste
     public function run(): void
     {
         $this->call([

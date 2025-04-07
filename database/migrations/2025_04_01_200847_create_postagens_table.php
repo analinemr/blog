@@ -6,9 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
+    //Retorno de dados tabela postagem
     public function up(): void
     {
         Schema::create('postagens', function (Blueprint $table) {

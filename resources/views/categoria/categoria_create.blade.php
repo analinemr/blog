@@ -20,7 +20,7 @@
                     </div>
                     @endif
                     
-                <!-- Create Post Form -->
+                <!-- Formulário de criação de categoria -->
                     <form action="{{ url('categoria') }}" method="post">
                         @csrf  <!-- Protege o formulário contra CSRF -->
                         

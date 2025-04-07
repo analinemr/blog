@@ -7,7 +7,9 @@
             <div class="card">
                 <div class="card-header">Postagem - SHOW</div>
 
+                
                 <div class="card-body">
+                    <!-- Visualização de postagem -->
 
                     <p><strong>Id: </strong>{{ $postagem->id }}</p>
                     <!-- retorna nome da categoria atravél de comando do Model - Relacionamento 1x1 -->

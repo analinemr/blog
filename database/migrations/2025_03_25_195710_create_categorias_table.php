@@ -6,9 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
+    //Retorno de dados tabela categotia
     public function up(): void
     {
         Schema::create('categorias', function (Blueprint $table) {
@@ -18,9 +17,7 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('categorias');

@@ -5,8 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Editar Postagem</div> <!-- Fechamento correto da tag div -->
-
+                <div class="card-header">Editar Postagem</div> 
+                
                 <div class="card-body">
 
                     @if ($errors->any())
@@ -19,7 +19,7 @@
                     </div>
                     @endif
 
-                <!-- Formulário -->
+                <!-- Formulário de edição -->
                 <form action="{{ url('postagem/' . $postagem->id) }}" method="post">
                     @method('PUT')
                     @csrf

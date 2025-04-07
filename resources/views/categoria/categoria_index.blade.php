@@ -8,6 +8,8 @@
                 <div class="card-header">Categoria</div>
 
 
+                <!-- Tela principal de Categoria -->
+
                 <script>
                     function ConfirmDelete(){
                         return confirm('Tem certeza que deseja excluir este registro?');

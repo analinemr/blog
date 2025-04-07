@@ -17,6 +17,7 @@
                 </div>
                 @endif
 
+                <!-- Formulário de edição de postagem -->
                     <form action="{{ url('categoria/' . $categoria->id) }}" method="post">
                         @method('PUT')
                         @csrf
