@@ -23,10 +23,15 @@
                         @method('PUT')
                         @csrf
 
+                        <div>
                         <label>Nome:</label>
                         <input type="text" name="nome" value="{{ $categoria->nome }}"class="form-control">
+                        </div>
 
+                        <div>
                         <button type="submit" class="btn btn-primary">ENVIAR</button>
+                        </div>
+
                     </form>
                 </div>
 
