@@ -47,9 +47,7 @@
 
                         <div class="form-group">
                             <label for="descricao">Descrição da Postagem: </label>
-                            <textarea name="descricao" rows="5" cols="33" class="form-control">
-                                {{ $postagem->descricao }}
-                            </textarea>
+                            <textarea name="descricao" rows="5" cols="33" class="form-control">{{ $postagem->descricao }}</textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Salvar</button>

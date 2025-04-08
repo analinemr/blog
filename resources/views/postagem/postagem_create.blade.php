@@ -39,9 +39,7 @@
 
                         <div class="form-group">
                             <label for="descricao">Descrição da Postagem: </label>
-                            <textarea id="descricao" name="descricao" rows="4" cols="50" class="form-control">
-                                TESTE - Descrição da postagem
-                            </textarea>
+                            <textarea id="descricao" name="descricao" rows="4" cols="50" class="form-control">TESTE - Descrição da postagem</textarea>
 
                         </div>
 
