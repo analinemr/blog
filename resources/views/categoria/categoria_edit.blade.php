@@ -5,36 +5,36 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Categoria - EDIT</div>
+                <div class="card-header">Editar Categoria</div> <!-- Título do cartão -->
 
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
+                <div class="card-body">
+                    
+                    <!-- Exibição de erros -->
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
-
-                <!-- Formulário de edição de postagem -->
-                <div>    
-                <form action="{{ url('categoria/' . $categoria->id) }}" method="post">
-                        @method('PUT')
-                        @csrf
-
-                        <div>
-                        <label>Nome:</label>
-                        <input type="text" name="nome" value="{{ $categoria->nome }}"class="form-control">
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    
+                    <!-- Formulário de edição de categoria -->
+                    <form action="{{ url('categoria/' . $categoria->id) }}" method="post">
+                        @method('PUT')  <!-- Indica que o método HTTP será PUT -->
+                        @csrf  <!-- Protege o formulário contra CSRF -->
+                        
+                        <div class="form-group">
+                            <label for="nome">Nome da Categoria:</label>
+                            <input type="text" id="nome" name="nome" class="form-control" value="{{ $categoria->nome }}">
                         </div>
-
-                        <div>
-                        <button type="submit" class="btn btn-primary">ENVIAR</button>
-                        </div>
-
+                        
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    
                     </form>
+                    
                 </div>
-
             </div>
         </div>
     </div>
