@@ -18,7 +18,8 @@
                 @endif
 
                 <!-- Formulário de edição de postagem -->
-                    <form action="{{ url('categoria/' . $categoria->id) }}" method="post">
+                <div>    
+                <form action="{{ url('categoria/' . $categoria->id) }}" method="post">
                         @method('PUT')
                         @csrf
 
@@ -27,6 +28,7 @@
 
                         <button type="submit" class="btn btn-primary">ENVIAR</button>
                     </form>
+                </div>
 
             </div>
         </div>
