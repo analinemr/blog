@@ -7,21 +7,20 @@
             <div class="card">
                 <div class="card-header">Categoria</div>
 
-
-                <!-- Tela principal de Categoria -->
-
+                <!-- Script de confirmação -->
                 <script>
-                    function ConfirmDelete(){
+                    function ConfirmDelete() {
                         return confirm('Tem certeza que deseja excluir este registro?');
                     }
                 </script>
 
                 <div class="card-body">
 
-                    <a class="btn btn-success" href="{{url('categoria/create')}}">CRIAR</a>
-                    <BR>
+                    <!-- Botão Criar -->
+                    <a class="btn btn-success mb-3" href="{{ url('categoria/create') }}">CRIAR</a>
 
-                        @if (session('message'))
+                    <!-- Mensagens de sessão -->
+                    @if (session('message'))
                         <div class="alert alert-success">
                             {{ session('message') }}
                         </div>
@@ -33,33 +32,36 @@
                         </div>
                     @endif
 
-                <table class='table'>
+                    <!-- Tabela -->
+                    <table class='table'>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Ações</th>
+                        </tr>
 
-                    <tr>
-                        <th>Id</th>
-                        <th>Nome</th>
-                        <th>Ações</th>
-                    </tr>
+                        @foreach ($categorias as $value)
+                        <tr>
+                            <td>{{ $value->id }}</td>
+                            <td>{{ $value->nome }}</td>
+                            <td>
+                                <!-- Botões organizados em linha com espaçamento -->
+                                <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                                    <a class="btn btn-info btn-sm" href="{{ url('categoria/'.$value->id) }}">Visualizar</a>
 
-                    @foreach ($categorias as $value)
-                    <tr>
-                        <td>{{ $value->id }}</td>
-                        <td>{{ $value->nome }}</td>
-                        <td>
-                            <a class="btn btn-info" href="{{ url('categoria/'.$value->id) }}">Visualizar</a>
-                            <a class="btn btn-warning" href="{{ url('categoria/'.$value->id.'/edit') }}">Editar</a>
+                                    <a class="btn btn-warning btn-sm" href="{{ url('categoria/'.$value->id.'/edit') }}">Editar</a>
 
-                    <form action="{{ url('categoria/' .$value->id)}}" method="post" onsubmit='return ConfirmDelete()'>
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-danger">Excluir</button>
-                    </form>
+                                    <form action="{{ url('categoria/' .$value->id)}}" method="post" onsubmit="return ConfirmDelete()">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
 
-                        </td>
-                    </tr>
-                    @endforeach
-
-                </table>
+                    </table>
 
                 </div>
             </div>

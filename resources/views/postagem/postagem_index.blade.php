@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Postagem</div>
 
-                <!-- Página principal de Postagem -->
+                <!-- Script de confirmação -->
                 <script>
                     function ConfirmDelete(){
                         return confirm('Tem certeza que deseja excluir este registro?');
@@ -16,14 +16,16 @@
 
                 <div class="card-body">
 
-                    <div>
-                        <a class="btn btn-success" href="{{url('postagem/create')}}">CRIAR</a>
+                    <!-- Botão Criar -->
+                    <div class="mb-3">
+                        <a class="btn btn-success" href="{{ url('postagem/create') }}">CRIAR</a>
                     </div>
 
+                    <!-- Mensagens -->
                     @if (session('message'))
-                       <div class="alert alert-success">
-                           {{ session('message') }}
-                       </div>
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
                     @endif
 
                     @if (session('error'))
@@ -32,35 +34,38 @@
                         </div>
                     @endif
 
-                <table class='table'>
+                    <!-- Tabela -->
+                    <table class='table'>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Título</th>
+                            <th>Descrição</th>
+                            <th>Ações</th>
+                        </tr>
 
-                    <tr>
-                        <th>Categoria</th>
-                        <th>Título</th>
-                        <th>Descrição</th>
-                    </tr>
+                        @foreach ($postagens as $value)
+                        <tr>
+                            <td>{{ $value->id }}</td>
+                            <!-- Relacionamento com categoria -->
+                            <td>{{ $value->categoria->nome }}</td>
+                            <td>{{ $value->titulo }}</td>
+                            <td>
+                                <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                                    <a class="btn btn-info btn-sm" href="{{ url('postagem/'.$value->id) }}">Visualizar</a>
 
-                    @foreach ($postagens as $value)
-                    <tr>
-                        <td>{{ $value->id }}</td>
-                        <!-- relacionamento com o ID da categoria para retornar nome -->
-                        <td>{{ $value->categoria->nome}}</td>
-                        <td>{{ $value->titulo}}</td>
-                        <td>
-                            <a class="btn btn-info" href="{{ url('postagem/'.$value->id) }}">Visualizar</a>
-                            <a class="btn btn-warning" href="{{ url('postagem/'.$value->id.'/edit') }}">Editar</a>
+                                    <a class="btn btn-warning btn-sm" href="{{ url('postagem/'.$value->id.'/edit') }}">Editar</a>
 
-                    <form action="{{ url('postagem/' .$value->id)}}" method="post" onsubmit='return ConfirmDelete()'>
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-danger">Excluir</button>
-                    </form>
+                                    <form action="{{ url('postagem/'.$value->id) }}" method="POST" onsubmit="return ConfirmDelete()">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
 
-                        </td>
-                    </tr>
-                    @endforeach
-
-                </table>
+                    </table>
 
                 </div>
             </div>
