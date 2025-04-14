@@ -17,7 +17,7 @@
                 <div class="card-body">
 
                     <!-- Botão Criar -->
-                    <a class="btn btn-success mb-3" href="{{ url('categoria/create') }}">CRIAR</a>
+                    <a class="btn btn-success mb-3" href="{{ url('categoria/create') }}">Criar nova categoria</a>
 
                     <!-- Mensagens de sessão -->
                     @if (session('message'))

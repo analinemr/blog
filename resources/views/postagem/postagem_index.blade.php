@@ -18,7 +18,7 @@
 
                     <!-- Botão Criar -->
                     <div class="mb-3">
-                        <a class="btn btn-success" href="{{ url('postagem/create') }}">CRIAR</a>
+                        <a class="btn btn-success" href="{{ url('postagem/create') }}">Criar nova postagem</a>
                     </div>
 
                     <!-- Mensagens -->
