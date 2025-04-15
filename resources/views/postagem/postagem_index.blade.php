@@ -45,11 +45,11 @@
 
                         @foreach ($postagens as $value)
                         <tr>
+                            <td>{{ $value->id }}</td>
                             <!-- Relacionamento com categoria -->
                             <td>{{ $value->categoria->nome }}</td>
                             <td>{{ $value->titulo }}</td>
-                            <td>{{ $value->descricao }}</td>
-
+                            <td>
                                 <div style="display: flex; flex-wrap: wrap; gap: 5px;">
                                     <a class="btn btn-info btn-sm" href="{{ url('postagem/'.$value->id) }}">Visualizar</a>
 
