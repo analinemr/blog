@@ -1,6 +1,12 @@
 @extends('adminlte::page')
 
 @section('content')
+
+ <!-- Rotas para o EDITOR RICH -->
+<link rel="stylesheet" href="{{ url('/richtexteditor/rte_theme_default.css') }}" />
+<script type="text/javascript" src="{{ url('/richtexteditor/rte.js') }}"></script>
+<script type="text/javascript" src="{{ url('/richtexteditor/plugins/all_plugins.js') }}"></script>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -20,7 +26,8 @@
                     @endif
 
                 <!-- Formulário de  criação de postagem-->
-                    <form action="{{ url('postagem') }}" method="post">
+
+                <form action="{{ url('postagem') }}" method="post">
 
                         @csrf  <!-- Protege o formulário contra CSRF -  -->
 
@@ -37,9 +44,10 @@
                             <input type="text" id="titulo" name="titulo" class="form-control">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group row">
                             <label for="descricao">Descrição da Postagem: </label>
-                            <textarea id="descricao" name="descricao" rows="4" cols="50" class="form-control">TESTE - Descrição da postagem</textarea>
+                            <!-- id EDITOR RICH para edição de postagem-->
+                            <textarea name="descricao" rows="4" cols="50" class="form-control" id="inp_editor1">Escreva a descrição da sua postagem</textarea>
 
                         </div>
 
@@ -48,6 +56,11 @@
                         </div>
 
                     </form>
+
+                    <!-- Renderização EDITOR RICH -->
+                    <script>
+                        var editor1 = new RichTextEditor("#inp_editor1");
+                    </script>
 
                 </div>
             </div>
