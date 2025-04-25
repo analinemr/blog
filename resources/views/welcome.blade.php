@@ -1,7 +1,7 @@
-<!-- resources/views/app.blade.php -->
+<!-- resources/views/child.blade.php -->
 
 @extends('layouts.app')
 
 @section('content')
-    <p>Meu conteúdo.</p>
+    <p>MEU CONTEUDO</p>
 @endsection
