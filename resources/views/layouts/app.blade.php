@@ -1,15 +1,14 @@
 <!DOCTYPE HTML>
 <!--
 	Dopetrope by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	TEMPLATE de https://html5up.net/
 -->
 <html>
 	<head>
 		<title>Dopetrope by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ url("assets/css/main.css") }}" />
+		<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -18,9 +17,9 @@
 				<section id="header">
 
 					<!-- Logo -->
-						<h1><a href="index.html">Dopetrope</a></h1>
+						<h1><a href="index.html">TESTE PARA BLOG</a></h1>
 
-					<!-- Nav -->
+					<!-- NAVEGADOR DE TEMPLATE -->
 						<nav id="nav">
 							<ul>
 								<li class="current"><a href="index.html">Home</a></li>
@@ -54,7 +53,7 @@
         </div>
 
 
-			<!-- Footer -->
+			<!-- RODAPÉ DE TEMPLATE -->
 				<section id="footer">
 					<div class="container">
 						<div class="row">
@@ -97,7 +96,7 @@
 									<header>
 										<h2>What's this all about?</h2>
 									</header>
-									<a href="#" class="image featured"><img src="images/pic10.jpg" alt="" /></a>
+									<a href="#" class="image featured"><img src="{{ url('images/pic10.jpg') }}" alt="" /></a>
 									<p>
 										This is <strong>Dopetrope</strong> a free, fully responsive HTML5 site template by
 										<a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a> It's released for free under
@@ -188,13 +187,13 @@
 
 		</div>
 
-		<!-- Scripts -->
-			<script src="{{ url("assets/js/jquery.min.js") }}"></script>
-			<script src="{{ url("assets/js/jquery.dropotron.min.js") }}"></script>
-			<script src="{{ url("assets/js/browser.min.js") }}"></script>
-			<script src="{{ url("assets/js/breakpoints.min.js") }}"></script>
-			<script src="{{ url("assets/js/util.js") }}"></script>
-			<script src="{{ url("assets/js/main.js") }}"></script>
+		    <!-- Scripts -->
+			<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    		<script src="{{ asset('assets/js/jquery.dropotron.min.js') }}"></script>
+   			<script src="{{ asset('assets/js/browser.min.js') }}"></script>
+    		<script src="{{ asset('assets/js/breakpoints.min.js') }}"></script>
+    		<script src="{{ asset('assets/js/util.js') }}"></script>
+    		<script src="{{ asset('assets/js/main.js') }}"></script>
 
 	</body>
 </html>

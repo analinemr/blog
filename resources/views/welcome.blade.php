@@ -3,5 +3,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <p>MEU CONTEUDO</p>
+
+<!-- TEXTO PARA EXEMPLO -->
+    <p>Meu conteúdo</p>
+
 @endsection
