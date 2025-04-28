@@ -22,24 +22,24 @@
 					<!-- NAVEGADOR DE TEMPLATE -->
 						<nav id="nav">
 							<ul>
-								<li class="current"><a href="index.html">Home</a></li>
+								<li class="current"><a href="{{ url('/>')}}">Principal</a></li>
 								<li>
-									<a href="#">Dropdown</a>
+									<a href="#">Categorias</a>
 									<ul>
-										<li><a href="#">Lorem ipsum dolor</a></li>
-										<li><a href="#">Magna phasellus</a></li>
-										<li><a href="#">Etiam dolore nisl</a></li>
+										<li><a href="#">Categoria 1</a></li>
+										<li><a href="#">Categoria 2</a></li>
+										<li><a href="#">Categoria 3</a></li>
 										<li>
-											<a href="#">Phasellus consequat</a>
+											<a href="#">Categoria 4</a>
 											<ul>
-												<li><a href="#">Magna phasellus</a></li>
-												<li><a href="#">Etiam dolore nisl</a></li>
-												<li><a href="#">Veroeros feugiat</a></li>
-												<li><a href="#">Nisl sed aliquam</a></li>
-												<li><a href="#">Dolore adipiscing</a></li>
+												<li><a href="#">SubCategoria 4.1</a></li>
+												<li><a href="#">SubCategoria 4.2</a></li>
+												<li><a href="#">SubCategoria 4.3</a></li>
+												<li><a href="#">SubCategoria 4.4</a></li>
+												<li><a href="#">SubCategoria 4.5</a></li>
 											</ul>
 										</li>
-										<li><a href="#">Veroeros feugiat</a></li>
+										<li><a href="#">Categoria 5</a></li>
 									</ul>
 								</li>
 								<li><a href="left-sidebar.html">Left Sidebar</a></li>
