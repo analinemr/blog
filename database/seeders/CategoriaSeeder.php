@@ -12,7 +12,7 @@ class CategoriaSeeder extends Seeder
     public function run(): void
     {
         DB::table('Categorias')->insert([
-            'nome' => 'Sapato',
+            'nome' => 'Anéis',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -28,5 +28,66 @@ class CategoriaSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+        DB::table('Categorias')->insert([
+            'nome' => 'Bolsa',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('Categorias')->insert([
+            'nome' => 'Mochila',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('Categorias')->insert([
+            'nome' => 'Calça',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('Categorias')->insert([
+            'nome' => 'Sandália',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('Categorias')->insert([
+            'nome' => 'Botas',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('Categorias')->insert([
+            'nome' => 'Carteira',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('Categorias')->insert([
+            'nome' => 'Cintos',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('Categorias')->insert([
+            'nome' => 'Meias',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('Categorias')->insert([
+            'nome' => 'Chinelos',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('Categorias')->insert([
+            'nome' => 'Sacolas',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
     }
 }

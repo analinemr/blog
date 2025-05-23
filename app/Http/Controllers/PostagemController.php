@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//Inclui o model de categoria para 
+//Inclui o model de categoria para
 use App\Models\Categoria;
 //Inclui o model de postagem
 use App\Models\Postagem;
@@ -24,7 +24,7 @@ class PostagemController extends Controller
         return view ('postagem.postagem_create', compact('categorias'));
     }
 
-    //Puxa dados para os SHOW 
+    //Puxa dados para os SHOW
     public function store(Request $request)
     {
     // Mensagens personalizadas
@@ -43,6 +43,7 @@ class PostagemController extends Controller
         //dd($request->all());
         $postagem = new Postagem();
         $postagem->categoria_id = $request->categoria_id;
+        $postagem->user_id = auth()->user()->id;
         $postagem->titulo = $request->titulo;
         $postagem->descricao = $request->descricao;
         $postagem->save();
@@ -51,7 +52,7 @@ class PostagemController extends Controller
         return redirect()->route('postagem.index')->with('message', 'Postagem cadastrada com sucesso!');
     }
 
-    //viasualizar postagens 
+    //viasualizar postagens
     public function show(string $id)
     {
         $postagem = Postagem::find($id);
@@ -59,7 +60,7 @@ class PostagemController extends Controller
         return view('postagem.postagem_show', compact('postagem'));
     }
 
-    //Edita postagens 
+    //Edita postagens
     public function edit(string $id)
     {
         $postagem=Postagem::find($id);

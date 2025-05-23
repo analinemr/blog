@@ -16,4 +16,10 @@ class Postagem extends Model
         return $this->hasOne(Categoria::class, 'id', 'categoria_id');
     }
 
+        //Relacionamento 1x1 para retornar o nome do autor ao puxar o ID pela postagem
+        public function autor(): HasOne
+        {
+            return $this->hasOne(User::class, 'id', 'user_id');
+        }
+
 }

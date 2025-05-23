@@ -20,32 +20,36 @@
 						<h1><a href="index.html">TESTE PARA BLOG</a></h1>
 
 					<!-- NAVEGADOR DE TEMPLATE -->
-						<nav id="nav">
-							<ul>
-								<li class="current"><a href="{{ url('/>')}}">Principal</a></li>
-								<li>
-									<a href="#">Categorias</a>
-									<ul>
-										<li><a href="#">Categoria 1</a></li>
-										<li><a href="#">Categoria 2</a></li>
-										<li><a href="#">Categoria 3</a></li>
-										<li>
-											<a href="#">Categoria 4</a>
-											<ul>
-												<li><a href="#">SubCategoria 4.1</a></li>
-												<li><a href="#">SubCategoria 4.2</a></li>
-												<li><a href="#">SubCategoria 4.3</a></li>
-												<li><a href="#">SubCategoria 4.4</a></li>
-												<li><a href="#">SubCategoria 4.5</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Categoria 5</a></li>
-									</ul>
-								</li>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
+                    <nav id="nav">
+                        <ul>
+                            <li class="current"><a href="{{ url("/") }}">Principal</a></li>
+
+                            <!--Para retornar as categorias no menu de navegação-->
+                            <li>
+                                <a href="#">Categorias</a>
+                                <ul>
+                                    @foreach ($categorias as $value)
+                                        <li><a href="{{ url('/PostagemByCategoriaId/' . $value->id) }}">{{ $value->nome }}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
+
+                            <!--Para retornar as categorias no menu de navegação-->
+                            <li>
+                                <a href="#">Autores</a>
+                                <ul>
+                                    @foreach ($autores as $value)
+                                        <li><a href="{{ url('/PostagemByAutorId/' . $value->id) }}">{{ $value->name }}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
+
+                            <!-- Setas do paginator-->
+                            <li><a href="left-sidebar.html">Left Sidebar</a></li>
 								<li><a href="right-sidebar.html">Right Sidebar</a></li>
 								<li><a href="no-sidebar.html">No Sidebar</a></li>
 							</ul>
+
 						</nav>
 
         <div class="container">
