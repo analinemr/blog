@@ -15,7 +15,7 @@ Route::get('/', [SiteController::class, 'index'])->name('site.princiapal');
 // Postagens por categoria
 Route::get('/PostagemByCategoriaId/{id}', [SiteController::class, 'PostagemByCategoriaId'])->name('site.PostagemByCategoriaId');
 
-//Postagens por Autor
+// Postagens por Autor
 Route::get('/PostagemByAutorId/{id}', [SiteController::class, 'PostagemByAutorId'])->name('site.PostagemByAutorId');
 
 
