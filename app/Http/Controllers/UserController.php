@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -18,18 +18,23 @@ class UserController extends Controller
         $messages = [
             'password_old.required' => 'Senha antiga é um campo obrigatório',
             'password_new.required' => 'Senha nova é um campo obrigatório',
-            'password_new2.required' => 'Repetir senha nova é um campo obrigatórioo',
+            'password_new2.required' => 'Repetir senha nova é um campo obrigatório',
             ];
     
         // Regras de validação com as mensagens personalizadas
         $validated = $request->validate([
-            //'password_old' => 'Senha antiga é um campo obrigatório',
-            //'password_new' => 'Senha nova é um campo obrigatório',
-            //'password_new2' => 'Repetir senha nova é um campo obrigatórioo',
-
-            'nome' => 'required|min:5|max:10|unique:categorias,nome',
+            'password_old' => 'required|min:5',
+            'password_new' => 'required|min:5|same:password_new2',
+            'password_new2' => 'required|min:5|same:password_new',
         ], $messages);
-    
+
+        //dd(auth()->user()->password);
+
+       if (Hash::check($request->password_old, auth()->user()->password)) {
+        dd('É igual!');
+       }else{
+        dd('É diferente');
+       }
 
     }
 
