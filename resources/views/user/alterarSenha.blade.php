@@ -17,6 +17,19 @@
                             @endforeach
                         </ul>
                     </div>
+
+                    @endif
+
+                    @if (session('message1'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('message1') }}
+                        </div>
+                    @endif
+
+                    @if (session('message2'))
+                        <div class="alert alert-warning" role="alert">
+                            {{ session('message2') }}
+                        </div>
                     @endif
                     
                 <!-- Formulário de alteração de senha -->

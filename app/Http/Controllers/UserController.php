@@ -31,9 +31,13 @@ class UserController extends Controller
         //dd(auth()->user()->password);
 
        if (Hash::check($request->password_old, auth()->user()->password)) {
-        dd('É igual!');
+        //dd('É igual!');
+        $user=auth()->user();
+        $user->password = Hash::make($request->password_new);
+        $user->save();
+        return redirect()->back()->with('message1', 'A senha foi alterada com sucesso!');
        }else{
-        dd('É diferente');
+        return redirect()->back()->with('message2', 'A senha inserida não confere!');
        }
 
     }
