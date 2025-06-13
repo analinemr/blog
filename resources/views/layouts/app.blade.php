@@ -1,203 +1,187 @@
 <!DOCTYPE HTML>
-<!--
-	Dopetrope by HTML5 UP
-	TEMPLATE de https://html5up.net/
--->
 <html>
-	<head>
-		<title>Dopetrope by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
-	</head>
-	<body class="homepage is-preload">
-		<div id="page-wrapper">
+<head>
+    <title>Blog da Ana</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+</head>
+<body class="homepage is-preload">
+<div id="page-wrapper">
 
-			<!-- Header -->
-				<section id="header">
+    <!-- Header -->
+    <section id="header">
 
-					<!-- Logo -->
-						<h1><a href="index.html">TESTE PARA BLOG</a></h1>
+        <!-- Logo -->
+        <h1><a href="index.html">BLOG DA ANA</a></h1>
 
-					<!-- NAVEGADOR DE TEMPLATE -->
-                    <nav id="nav">
-                        <ul>
-                            <li class="current"><a href="{{ url("/") }}">Principal</a></li>
-
-                            <!--Para retornar as categorias no menu de navegação-->
-                            <li>
-                                <a href="#">Categorias</a>
-                                <ul>
-                                    @foreach ($categorias as $value)
-                                        <li><a href="{{ url('/PostagemByCategoriaId/' . $value->id) }}">{{ $value->nome }}</a></li>
-                                    @endforeach
-                                </ul>
-                            </li>
-
-                            <!--Para retornar as categorias no menu de navegação-->
-                            <li>
-                                <a href="#">Autores</a>
-                                <ul>
-                                    @foreach ($autores as $value)
-                                        <li><a href="{{ url('/PostagemByAutorId/' . $value->id) }}">{{ $value->name }}</a></li>
-                                    @endforeach
-                                </ul>
-                            </li>
-
-                            <!-- Setas do paginator-->
-                            <li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
-							</ul>
-
-						</nav>
+        <!-- NAVEGADOR DE TEMPLATE -->
+        <nav id="nav">
+            <ul>
+                <li class="current"><a href="{{ url("/") }}">Principal</a></li>
+                <li>
+                    <a href="#">Categorias</a>
+                    <ul>
+                        @foreach ($categorias as $value)
+                            <li><a href="{{ url('/PostagemByCategoriaId/' . $value->id) }}">{{ $value->nome }}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Autores</a>
+                    <ul>
+                        @foreach ($autores as $value)
+                            <li><a href="{{ url('/PostagemByAutorId/' . $value->id) }}">{{ $value->name }}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+                <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                <li><a href="no-sidebar.html">No Sidebar</a></li>
+            </ul>
+        </nav>
 
         <div class="container">
             @yield('content')
         </div>
 
+        <!-- RODAPÉ DE TEMPLATE -->
+        <section id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 col-12-medium">
+                        <section>
+                            <header>
+                                <h2>Palavras de Clarice</h2>
+                            </header>
+                            <ul class="dates">
+                                <li>
+                                    <span class="date">Jan <strong>27</strong></span>
+                                    <h3><a href="#">Liberdade</a></h3>
+                                    <p>Liberdade é pouco. O que eu desejo ainda não tem nome.</p>
+                                </li>
+                                <li>
+                                    <span class="date">Jan <strong>23</strong></span>
+                                    <h3><a href="#">Simplicidade</a></h3>
+                                    <p>Que ninguém se engane: só se consegue a simplicidade através de muito trabalho.</p>
+                                </li>
+                                <li>
+                                    <span class="date">Jan <strong>15</strong></span>
+                                    <h3><a href="#">Descoberta</a></h3>
+                                    <p>Sou como você me vê. Posso ser leve como uma brisa ou forte como uma ventania.</p>
+                                </li>
+                                <li>
+                                    <span class="date">Jan <strong>12</strong></span>
+                                    <h3><a href="#">Coragem</a></h3>
+                                    <p>Renda-se, como eu me rendi. Mergulhe no que você não conhece como eu mergulhei.</p>
+                                </li>
+                                <li>
+                                    <span class="date">Jan <strong>10</strong></span>
+                                    <h3><a href="#">Palavras</a></h3>
+                                    <p>Eu escrevo sem esperança de que o que eu escrevo altere qualquer coisa.</p>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="col-4 col-12-medium">
+                        <section>
+                            <header>
+                                <h2>Clarice Lispector</h2>
+                            </header>
+                            <a href="#" class="image featured"><img src="{{ url('images/pic10.jpg') }}" alt="" /></a>
+                            <p>
+                                Escrevo como quem aprende. Não sei fazer outra coisa a não ser tocar o mistério com palavras.
+                                <br><br>
+                                “Até cortar os próprios defeitos pode ser perigoso. Nunca se sabe qual é o defeito que sustenta nosso edifício inteiro.”
+                            </p>
+                            <footer>
+                                <ul class="actions">
+                                    <li><a href="#" class="button">Ler mais</a></li>
+                                </ul>
+                            </footer>
+                        </section>
+                    </div>
+                    <div class="col-4 col-6-medium col-12-small">
+                        <section>
+                            <header>
+                                <h2>Fragmentos</h2>
+                            </header>
+                            <ul class="divided">
+                                <li><a href="#">"Ela acreditava em anjos e, porque acreditava, eles existiam."</a></li>
+                                <li><a href="#">"Sou composta por urgências."</a></li>
+                                <li><a href="#">"Não se preocupe em entender. Viver ultrapassa qualquer entendimento."</a></li>
+                                <li><a href="#">"Tenho várias caras. Uma é quase bonita, outra é quase feia."</a></li>
+                                <li><a href="#">"O silêncio é a única resposta que devemos dar aos tolos."</a></li>
+                                <li><a href="#">"O que verdadeiramente somos é aquilo que o impossível cria em nós."</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="col-4 col-6-medium col-12-small">
+                        <section>
+                            <header>
+                                <h2>Mais Clarice</h2>
+                            </header>
+                            <ul class="divided">
+                                <li><a href="#">"Escrevo porque encontro nisso um modo de viver."</a></li>
+                                <li><a href="#">"Enquanto eu tiver perguntas e não houver respostas, continuarei a escrever."</a></li>
+                                <li><a href="#">"Passei a vida tentando corrigir os erros que cometi na minha ânsia de acertar."</a></li>
+                                <li><a href="#">"Tudo no mundo começou com um sim."</a></li>
+                                <li><a href="#">"Não tenho tempo pra mais nada, ser feliz me consome muito."</a></li>
+                                <li><a href="#">"Sou uma pergunta sem resposta."</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="col-4 col-12-medium">
+                        <section>
+                            <header>
+                                <h2>Redes sociais</h2>
+                            </header>
+                            <ul class="social">
+                                <li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
+                                <li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
+                                <li><a class="icon brands fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+                                <li><a class="icon brands fa-tumblr" href="#"><span class="label">Tumblr</span></a></li>
+                                <li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
+                            </ul>
+                            <ul class="contact">
+                                <li>
+                                    <h3>Endereço</h3>
+                                    <p>
+                                        Rua da Inspiração, 123<br />
+                                        Algum Lugar – BR
+                                    </p>
+                                </li>
+                                <li>
+                                    <h3>Email</h3>
+                                    <p><a href="#">ana@blog.com</a></p>
+                                </li>
+                                <li>
+                                    <h3>Telefone</h3>
+                                    <p>(00) 0000-0000</p>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="col-12">
+                        <div id="copyright">
+                            <ul class="links">
+                                <li>&copy; Blog da Ana. Todos os direitos reservados.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-			<!-- RODAPÉ DE TEMPLATE -->
-				<section id="footer">
-					<div class="container">
-						<div class="row">
-							<div class="col-8 col-12-medium">
-								<section>
-									<header>
-										<h2>Blandit nisl adipiscing</h2>
-									</header>
-									<ul class="dates">
-										<li>
-											<span class="date">Jan <strong>27</strong></span>
-											<h3><a href="#">Lorem dolor sit amet veroeros</a></h3>
-											<p>Ipsum dolor sit amet veroeros consequat blandit ipsum phasellus lorem consequat etiam.</p>
-										</li>
-										<li>
-											<span class="date">Jan <strong>23</strong></span>
-											<h3><a href="#">Ipsum sed blandit nisl consequat</a></h3>
-											<p>Blandit phasellus lorem ipsum dolor tempor sapien tortor hendrerit adipiscing feugiat lorem.</p>
-										</li>
-										<li>
-											<span class="date">Jan <strong>15</strong></span>
-											<h3><a href="#">Magna tempus lorem feugiat</a></h3>
-											<p>Dolore consequat sed phasellus lorem sed etiam nullam dolor etiam sed amet sit consequat.</p>
-										</li>
-										<li>
-											<span class="date">Jan <strong>12</strong></span>
-											<h3><a href="#">Dolore tempus ipsum feugiat nulla</a></h3>
-											<p>Feugiat lorem dolor sed nullam tempus lorem ipsum dolor sit amet nullam consequat.</p>
-										</li>
-										<li>
-											<span class="date">Jan <strong>10</strong></span>
-											<h3><a href="#">Blandit tempus aliquam?</a></h3>
-											<p>Feugiat sed tempus blandit tempus adipiscing nisl lorem ipsum dolor sit amet dolore.</p>
-										</li>
-									</ul>
-								</section>
-							</div>
-							<div class="col-4 col-12-medium">
-								<section>
-									<header>
-										<h2>What's this all about?</h2>
-									</header>
-									<a href="#" class="image featured"><img src="{{ url('images/pic10.jpg') }}" alt="" /></a>
-									<p>
-										This is <strong>Dopetrope</strong> a free, fully responsive HTML5 site template by
-										<a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a> It's released for free under
-										the <a href="http://html5up.net/license/">Creative Commons Attribution</a> license so feel free to use it for any personal or commercial project &ndash; just don't forget to credit us!
-									</p>
-									<footer>
-										<ul class="actions">
-											<li><a href="#" class="button">Find out more</a></li>
-										</ul>
-									</footer>
-								</section>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<section>
-									<header>
-										<h2>Tempus consequat</h2>
-									</header>
-									<ul class="divided">
-										<li><a href="#">Lorem ipsum dolor sit amet sit veroeros</a></li>
-										<li><a href="#">Sed et blandit consequat sed tlorem blandit</a></li>
-										<li><a href="#">Adipiscing feugiat phasellus sed tempus</a></li>
-										<li><a href="#">Hendrerit tortor vitae mattis tempor sapien</a></li>
-										<li><a href="#">Sem feugiat sapien id suscipit magna felis nec</a></li>
-										<li><a href="#">Elit class aptent taciti sociosqu ad litora</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-								<section>
-									<header>
-										<h2>Ipsum et phasellus</h2>
-									</header>
-									<ul class="divided">
-										<li><a href="#">Lorem ipsum dolor sit amet sit veroeros</a></li>
-										<li><a href="#">Sed et blandit consequat sed tlorem blandit</a></li>
-										<li><a href="#">Adipiscing feugiat phasellus sed tempus</a></li>
-										<li><a href="#">Hendrerit tortor vitae mattis tempor sapien</a></li>
-										<li><a href="#">Sem feugiat sapien id suscipit magna felis nec</a></li>
-										<li><a href="#">Elit class aptent taciti sociosqu ad litora</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="col-4 col-12-medium">
-								<section>
-									<header>
-										<h2>Vitae tempor lorem</h2>
-									</header>
-									<ul class="social">
-										<li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
-										<li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
-										<li><a class="icon brands fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
-										<li><a class="icon brands fa-tumblr" href="#"><span class="label">Tumblr</span></a></li>
-										<li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
-									</ul>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<p>
-												Untitled Incorporated<br />
-												1234 Somewhere Road Suite<br />
-												Nashville, TN 00000-0000
-											</p>
-										</li>
-										<li>
-											<h3>Mail</h3>
-											<p><a href="#">someone@untitled.tld</a></p>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<p>(800) 000-0000</p>
-										</li>
-									</ul>
-								</section>
-							</div>
-							<div class="col-12">
+</div>
 
-								<!-- Copyright -->
-									<div id="copyright">
-										<ul class="links">
-											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-										</ul>
-									</div>
+<!-- Scripts -->
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.dropotron.min.js') }}"></script>
+<script src="{{ asset('assets/js/browser.min.js') }}"></script>
+<script src="{{ asset('assets/js/breakpoints.min.js') }}"></script>
+<script src="{{ asset('assets/js/util.js') }}"></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
 
-							</div>
-						</div>
-					</div>
-				</section>
-
-		</div>
-
-		    <!-- Scripts -->
-			<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    		<script src="{{ asset('assets/js/jquery.dropotron.min.js') }}"></script>
-   			<script src="{{ asset('assets/js/browser.min.js') }}"></script>
-    		<script src="{{ asset('assets/js/breakpoints.min.js') }}"></script>
-    		<script src="{{ asset('assets/js/util.js') }}"></script>
-    		<script src="{{ asset('assets/js/main.js') }}"></script>
-
-	</body>
+</body>
 </html>

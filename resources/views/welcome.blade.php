@@ -18,6 +18,7 @@
                                 <!-- "!!" - Serve para manter a formatação do editor de texto-->
                                 <p>{!! $value->descricao !!}</p>
                                 <p>Autor:{{$value->autor->name }}</p>
+
                             </article>
                         @endforeach
 
