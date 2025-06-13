@@ -4,7 +4,7 @@ Um blog simples e funcional desenvolvido com **Laravel** e o motor de templates 
 
 ## Funcionalidades
 
-### Público Geral:
+### Geral:
 - Página principal com exibição de postagens.
 - Visualização de postagens por **categoria**.
 - Visualização de postagens por **autor**.
