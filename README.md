@@ -23,15 +23,15 @@ Um blog simples e funcional desenvolvido com **Laravel** e o motor de templates 
 - HTML5, CSS3, JavaScript
 
 ##  Pré-requisito:
-Xampp (https://www.apachefriends.org/)
-Mysql Workbench (https://dev.mysql.com/downloads/workbench/)
-Git (https://git-scm.com/)
-GitHub Desktop (https://desktop.github.com/)
-Composer (https://getcomposer.org/download/)
-Visual Studio Code (https://code.visualstudio.com/)
-Instalar no Visual Studio Code a extensão Laravel Extension Pack (https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-extension-pack)
-Instalar no Visual Studio Code a extensão Material Icon Theme (https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-Node (https://nodejs.org/) OBS.: Não esqueça de reiniciar o computador
+- Xampp (https://www.apachefriends.org/)
+- Mysql Workbench (https://dev.mysql.com/downloads/workbench/)
+- Git (https://git-scm.com/)
+- GitHub Desktop (https://desktop.github.com/)
+- Composer (https://getcomposer.org/download/)
+- Visual Studio Code (https://code.visualstudio.com/)
+- Instalar no Visual Studio Code a extensão Laravel Extension Pack (https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-extension-pack)
+- Instalar no Visual Studio Code a extensão Material Icon Theme (https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+- Node (https://nodejs.org/) OBS.: Não esqueça de reiniciar o computador
 
 ## Como executar o projeto
 
@@ -45,12 +45,12 @@ Abra o terminal e execute o código entre aspas "copy .env.example .env"
 
 5) Mude o nome do banco no arquivo .env
 Altere esta parte do código para ficar igual esta abaixo.
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=blog
-DB_USERNAME=root
-DB_PASSWORD=
+- DB_CONNECTION=mysql
+- DB_HOST=127.0.0.1
+- DB_PORT=3306
+- DB_DATABASE=blog
+- DB_USERNAME=root
+- DB_PASSWORD=
 
 5) Instale as depedências
 Abra o terminal e execute o código entre aspas "composer install"
